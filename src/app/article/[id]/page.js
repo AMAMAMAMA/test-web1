@@ -21,23 +21,20 @@ function formatDate(dateStr) {
 export default async function ArticlePage({ params }) {
     const { id } = await params;
     const article = await getArticle(id);
-
-    if (!article) {
-        notFound();
-    }
+    if (!article) notFound();
 
     return (
-        <div className="article-container">
-            <Link href="/" className="btn btn-secondary btn-sm" style={{ marginBottom: '2rem', display: 'inline-flex' }}>
-                ← 一覧に戻る
-            </Link>
-
-            <article>
-                <header className="article-header">
-                    <h1 className="article-title">{article.title}</h1>
-                    <p className="article-meta">{formatDate(article.created_at)}</p>
-                </header>
-                <div className="article-content">{article.content}</div>
+        <div className="container">
+            <div style={{ marginBottom: '1rem' }}>
+                <Link href="/" className="btn btn-secondary">← 記事一覧に戻る</Link>
+            </div>
+            <article className="article-content">
+                <h1 className="article-title">{article.title}</h1>
+                <p className="article-meta">{formatDate(article.created_at)}</p>
+                <div
+                    className="article-body"
+                    dangerouslySetInnerHTML={{ __html: article.content }}
+                />
             </article>
         </div>
     );

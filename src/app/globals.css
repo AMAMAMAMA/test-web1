@@ -449,6 +449,77 @@ a:hover { color: #fff; }
   color: var(--text-muted);
 }
 
+/* ========== ARTICLE ROW (Dashboard) ========== */
+.article-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.1rem;
+  transition: border-color var(--transition);
+  flex-wrap: wrap;
+}
+
+.article-row:hover {
+  border-color: var(--accent);
+}
+
+.article-row-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.article-row-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.article-row-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.article-row-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ========== EDITOR FORM ========== */
+.editor-form {
+  max-width: 820px;
+}
+
+.article-body {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.article-body h1, .article-body h2, .article-body h3 {
+  color: var(--text-primary);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.article-body p {
+  margin-bottom: 1rem;
+}
+
+.article-body a {
+  color: var(--accent-light);
+}
+
 /* ========== FOOTER ========== */
 .footer {
   border-top: 1px solid var(--border);
